@@ -1,12 +1,18 @@
 # RStudios---Data-Visualisation
+
+
+🎬 Movie Data Analysis in RStudio
+
 This project demonstrates my ability to handle a complete data analysis workflow using R and RStudio — from importing a raw CSV file, cleaning and exploring the data, to producing clear visualisations using ggplot2.
 
 Rather than providing instructions to reproduce the work, this README explains the steps I personally executed to achieve the analysis shown.
 
+
 📁 Dataset
 
-I worked with a dataset named MoviesRatingRottenTomato.csv containing 74 films.
+I worked with a dataset named movie_data.csv containing 74 films.
 It included the following key variables:
+
 
 Column	Description
 Film	Movie title
@@ -19,8 +25,9 @@ Worldwide.Gross	Total worldwide gross (in millions)
 Year	Year of release
 ⚙️ My Workflow
 
-Here’s the process I followed, with the exact R code used at each stage:
 
+
+Here’s the process I followed, with the exact R code used at each stage:
 
 🧩 1. Setting Up the Environment
 
@@ -34,12 +41,16 @@ I confirmed this with:
 getwd()
 
 
+
+
 📥 2. Importing the Dataset
 
 I loaded the CSV file into R as a data frame and opened it in RStudio’s data viewer:
 
-df <- read.csv("MoviesRatingRottenTomato.csv")
+df <- read.csv("movie_data.csv")
 View(df)
+
+
 
 
 🧐 3. Exploring the Data Structure
@@ -57,6 +68,8 @@ summary(df)
 This gave me insights into numeric ranges (e.g. Profitability, Rotten.Tomatoes) and categorical distributions (e.g. Genre, Lead.Studio).
 
 
+
+
 🧹 4. Cleaning the Data
 
 To ensure clean input for visualisation and analysis, I removed rows containing missing values:
@@ -67,12 +80,16 @@ df <- na.omit(df)
 This gave me a complete dataset without gaps, which is crucial for generating accurate plots.
 
 
+
+
 📦 5. Loading Libraries
 
 I used the ggplot2 package to create all my visualisations.
 If not already installed, it can be installed with install.packages("ggplot2"), and then I loaded it:
 
 library(ggplot2)
+
+
 
 
 📊 6. Visualising Trends
@@ -97,6 +114,8 @@ ggplot(df, aes(x = Lead.Studio, y = Rotten.Tomatoes)) +
 
 
 This plot helped me see how critics’ scores varied across different production studios.
+
+
 
 
 📌 Outcome
